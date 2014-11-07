@@ -22,3 +22,15 @@ sudo apt-get install ansible
 ```
 
 We now have all of the software required to administer our servers through Ansible.
+
+# Setting up a development machine
+
+Please make sure that the pc you are provisioning has openssh installed or use the local host setup in the development inventory file.
+
+To provision, run the following:
+```ansible-playbook -i inventory/development development-desktop.yml -k -K```
+
+If you are provisioning over ssh, make sure the following config is set:
+```host_key_checking = False```
+
+An example of it can be found in ```config/ansible.cfg```
