@@ -1,0 +1,27 @@
+---
+- name: Create the pycharm installation directory
+  file: path=/opt/pycharm state=directory
+
+- name: Download Pycharm to /opt/pycharm
+  get_url: url=http://download.jetbrains.com/python/pycharm-community-3.4.1.tar.gz dest=/opt/pycharm/pycharm-community-3.4.1.tar.gz force=no
+
+- name: Extract Pycharm components.
+  shell: tar -xvzf /opt/pycharm/pycharm-community-3.4.1.tar.gz -C /opt/pycharm --strip-components=1 pycharm-community-3.4.1 
+  args: 
+      ceates: /opt/pycharm/bin/pycharm.sh
+
+- name: Remove the archive, we don't need it anymore
+  file: path=/opt/pycharm/pycharm-community-3.4.1.tar.gz state=absent
+
+- name: Make pycharm bin folder content executable
+  file: path=/opt/pycharm/bin mode=755 recurse=yes state=directory
+
+- name: Create the menu item for PyCharm
+  template:
+      src=pycharm-ide.desktop
+      dest=/usr/share/applications/pycharm-ide.desktop
+      owner=root
+      group=root
+      mode=0755
+  
+  

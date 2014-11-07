@@ -1,0 +1,22 @@
+---
+- hosts: development
+  user: jaco
+  roles:
+      - build-essential
+      - curl
+      - desktop-utils
+      - docker
+      - git
+      - gnome3
+      - server-utils
+      - tmux
+      - vim
+      - zsh
+      - openssh
+      - openjdk
+      - python
+      - mysql
+      - php
+      - apache
+      - netbeans
+      - pycharm

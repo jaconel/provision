@@ -1,0 +1,4 @@
+---
+- name: Install openssh
+  apt: pkg=openssh-server state=present
+  sudo: true

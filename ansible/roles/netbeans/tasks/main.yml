@@ -1,0 +1,13 @@
+---
+- name: Create the netbeans installation directory
+  file: path=/opt/netbeans state=directory
+
+- name: Download Netbeans installation script
+  get_url: url=http://download.netbeans.org/netbeans/8.0.1/final/bundles/netbeans-8.0.1-php-linux.sh dest=/opt/netbeans/netbeans_install.sh force=no
+
+
+- name: Make netbeans install file executable
+  file: path=/opt/netbeans/netbeans_install.sh mode=755 state=file
+
+- name: Execute the netbeans installation file silently
+  shell: /opt/netbeans/netbeans_install.sh  --silent "-J-Dnb-base.installation.location=/opt/netbeans" creates=/opt/netbeans/bin/netbeans

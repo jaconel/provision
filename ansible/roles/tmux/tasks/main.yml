@@ -1,0 +1,5 @@
+---
+# Installs tmux
+- name: Install tmux
+  apt: pkg=tmux state=present update_cache=yes
+  sudo: yes

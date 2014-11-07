@@ -1,0 +1,35 @@
+---
+- name: Install Gnome3
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - gnome-shell
+    - ubuntu-gnome-desktop
+    - gnome-tweak-tool
+    - gdm
+
+- name: Remove unity
+  apt: pkg={{ item }} state=absent purge=true
+  with_items:
+      - unity 
+      - unity-common 
+      - unity-services 
+      - unity-lens-* 
+      - unity-scope-* 
+      - unity-webapps-* 
+      - gnome-control-center-unity 
+      - hud 
+      - libunity-core-6* 
+      - libunity-misc4 
+      - libunity-webapps* 
+      - appmenu-gtk 
+      - appmenu-gtk3 
+      - appmenu-qt* 
+      - overlay-scrollbar* 
+      - activity-log-manager-control-center 
+      - firefox-globalmenu 
+      - thunderbird-globalmenu 
+      - libufe-xidgetter0 
+      - xul-ext-unity 
+      - xul-ext-webaccounts 
+      - webaccounts-extension-common 
+      - xul-ext-websites-integration

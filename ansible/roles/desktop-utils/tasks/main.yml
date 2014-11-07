@@ -1,0 +1,27 @@
+---
+# Install terminator
+- name: Add apt repository for terminator
+  apt_repository: repo="ppa:webupd8team/unstable"
+
+- name: Install terminator
+  apt: pkg=terminator state=present update_cache=yes
+
+- name: Install desktop apts
+  apt: pkg=vlc state=present
+  with_items:
+    - lvlc
+    - filezilla
+    - empathy
+    - libreoffice
+
+- name: Download Google Chrome browser
+  get_url: url=https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb dest=/tmp/google-chrome-stable_current_amd64.deb force=no
+
+- name: Install Chrome dependancies
+  apt: pkg={{ item }} state=present
+  with_items:
+    - libappindicator1
+    - libindicator7
+
+- name: Install Google Chrome browser
+  command: dpkg -i /tmp/google-chrome-stable_current_amd64.deb

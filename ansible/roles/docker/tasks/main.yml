@@ -1,0 +1,4 @@
+---
+- name: Install docker dependencies
+  apt: pkg=docker.io state=present
+  sudo: yes

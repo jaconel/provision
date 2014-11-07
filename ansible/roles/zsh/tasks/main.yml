@@ -1,0 +1,8 @@
+---
+- name: Install zsh
+  apt: pkg=zsh state=present update_cache=yes
+  sudo: yes
+
+- name: Switch to zsh
+  user: name={{ansible_ssh_user}} shell=/usr/bin/zsh
+  sudo: yes 

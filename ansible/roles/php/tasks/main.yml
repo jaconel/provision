@@ -1,0 +1,11 @@
+---
+- name: Install php
+  apt: pkg={{ item }} state=present
+  with_items:
+      - php5
+      - libapache2-mod-php5
+      - php5-curl
+      - php5-gd
+      - php5-mcrypt
+      - php5-mysql
+      - php5-xdebug

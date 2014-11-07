@@ -1,0 +1,11 @@
+---
+- name: Install openjdk7
+  apt: pkg={{ item }} state=present
+  with_items:
+      - openjdk-7-jre
+      - openjdk-7-jdk
+      - openjdk-7-jre-headless
+      - java-common
+      - tzdata-java
+      - libatk-wrapper-java-jni
+      - libatk-wrapper-java

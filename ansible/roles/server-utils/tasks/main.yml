@@ -1,0 +1,19 @@
+---
+- name: Install htop
+  apt: pkg=htop state=present
+
+- name: Install iotop
+  apt: pkg=iotop state=present
+
+- name: install iftop
+  apt: pkg=iftop state=present
+
+- name: Install tcpdump
+  apt: pkg=tcpdump state=present
+
+- name: Install nethogs
+  apt: pkg=nethogs state=present
+
+- name: Install sysstat
+  apt: pkg=sysstat state=present
+

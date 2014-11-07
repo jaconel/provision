@@ -1,0 +1,6 @@
+# file: vim/tasks/main.yml
+
+- name: Install vim on the system
+  apt:
+    pkg: "vim"
+    state: present

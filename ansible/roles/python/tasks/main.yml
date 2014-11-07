@@ -1,0 +1,9 @@
+---
+- name: Install python dependancies
+  apt: pkg={{ item }} state=present
+  with_items:
+      - python-pip
+      - python-dev
+      - python-virtualenv
+      - python-mysqldb
+
