@@ -25,12 +25,23 @@ We now have all of the software required to administer our servers through Ansib
 
 # Setting up a development machine
 
-Please make sure that the pc you are provisioning has openssh installed or use the local host setup in the development inventory file.
+## Locally
 
-To provision, run the following:
+The repository is setup to make it easy for a developer to provision his/her local environment. 
+
+You can simply run the following command:
 ```ansible-playbook -i inventory/development development-desktop.yml -k -K```
+
+## Remotely
+
+Please make sure that the pc you are provisioning has openssh installed. Next, replace the development section in the inventory file with the ip address of the host you are trying to provision.
 
 If you are provisioning over ssh, make sure the following config is set:
 ```host_key_checking = False```
 
-An example of it can be found in ```config/ansible.cfg```
+An example of it can be found in ```config/ansible.cfg```. (TODO: Move this file to the project route allowing users to use it without copying it to directory being read by ansible.)
+
+To provision, run the following:
+```ansible-playbook -i inventory/development development-desktop.yml -k -K```
+
+
