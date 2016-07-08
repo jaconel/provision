@@ -1,3 +1,10 @@
+# Overview
+
+PLEASES NOTE THIS PROJECT IS DEPRECATED.
+
+Allows provisioning of development environment using Ansible.
+
+
 # Installing Ansible
 
 The best way to get Ansible for Ubuntu is to add the project's PPA (personal package archive) to your system.
